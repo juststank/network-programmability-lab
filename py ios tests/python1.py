@@ -22,8 +22,12 @@ tn.write(b"int loop 2\n")
 tn.write(b"ip add 2.2.2.2 255.255.255.255\n")
 tn.write(b"router ospf 1\n")
 tn.write(b"network 0.0.0.0 255.255.255.255 area 0\n")
+tn.write(b"no int range loop 1 - 2\n")
+tn.write(b"no router ospf 1\n")
 
 tn.write(b"end\n")
 tn.write(b"exit\n")
 
 print(tn.read_all().decode('ascii'))
+
+
